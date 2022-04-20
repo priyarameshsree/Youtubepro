@@ -1,0 +1,63 @@
+package pom_stepDefinition;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class YouTstepDefinition {
+	WebDriver driver;
+	
+	@Given("user is entering Youtube.com")
+	public void user_is_entering_youtube_com() throws InterruptedException {
+	    // Write code here that turns the phrase above into concrete actions
+		System.setProperty("webdriver.chrome.driver","E:\\selenium\\chrome\\chromedriver_win32\\chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.get("https://youtube.com/");
+		driver.manage().window().maximize();
+		Thread.sleep(5000);
+	    System.out.println("Enter the youTube site");
+	}
+
+	@When("the User is typing the searchTerm\"CatsColour\"")
+	public void the_user_is_typing_the_search_term_cats_colour() throws InterruptedException {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.name("search_query")).click();
+		Thread.sleep(10000);
+		driver.findElement(By.name("search_query")).sendKeys("catscolour");
+		Thread.sleep(20000);
+		Actions act=new Actions(driver);
+		act.sendKeys(Keys.ARROW_DOWN).build().perform();
+		act.sendKeys(Keys.ENTER).build().perform();
+		Thread.sleep(4000);
+	    System.out.println("type the cats colour");
+	}
+
+	@When("User Select any one of the Video")
+	public void user_select_any_one_of_the_video() throws InterruptedException {
+	    // Write code here that turns the phrase above into concrete actions
+		System.out.println("The page url is"+driver.getCurrentUrl());
+		driver.findElement(By.xpath("/html[1]/body[1]/ytd-app[1]/div[1]/ytd-page-manager[1]/ytd-search[1]/div[1]/ytd-two-column-search-results-renderer[1]/div[1]/ytd-section-list-renderer[1]/div[2]/ytd-item-section-renderer[1]/div[3]/ytd-video-renderer[1]/div[1]/div[1]/div[1]/div[1]/h3[1]/a[1]/yt-formatted-string[1]")).click();
+		Thread.sleep(4000);
+	    System.out.println("Select the Video");
+	}
+	@When("Enters the return key")
+	public void enters_the_return_key() {
+	    // Write code here that turns the phrase above into concrete actions
+	    System.out.println("Press the Enter");
+	}
+
+	@Then("Click and play the video")
+	public void click_and_play_the_video() {
+	    // Write code here that turns the phrase above into concrete actions
+	   System.out.println("Click and play the video");
+	}
+
+
+
+}
