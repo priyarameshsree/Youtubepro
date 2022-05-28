@@ -1,0 +1,27 @@
+package javaProgram;
+
+public class Personal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String name="Banupriya";
+		System.out.println("My name is:"+name);
+		long phno=9994438360l;
+		System.out.println("My Mobile  num is:"+phno);
+		float weight=45.5f;
+		System.out.println("My weight is :"+weight);
+		int DOB=7796;
+		System.out.println("My DOB is:"+DOB);
+		short salry=15000;
+		System.out.println("My salary is:"+salry);
+		String fname="RameshBabu";
+		System.out.println("My father name is:"+fname);
+		String Mname="Vasantha";
+		System.out.println("My mother name is:"+Mname);
+		String Bname="Srinivasan";
+		System.out.println("My Brother name is:"+Bname);
+		
+
+	}
+
+}
